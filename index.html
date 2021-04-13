@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Taco Cat</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <!-- Favicons 04-09-21 jdj: custom favicon -->
+  <link href="/img/faviconjd32.png" rel="icon">
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom CSS jd: added this from getbootstrap nav, view source, find css reference, open, copy paste all into site.css -->
+  <link rel="stylesheet" href="/CSS/site.css">
+
+
+
+
+</head>
+
+<body id="index">
+
+  <!-- jd: from getbootstrap.com with nav bar, view source html, cut and past from under body the header through footer -->
+
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Taco Cat Application</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">The App <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="App.html">The App</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="CodeView.html">How this Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="CodeGet.html">Grab The Code</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="About.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- Begin page content -->
+  <main role="main" class="flex-shrink-0">
+
+    <div class="container mt-5">  <!-- mt-5 is margin top -->
+      <div class="row pt-5">   <!-- is column padding top -->
+        <div class="col-6">
+          <h2> Reversing a String</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <form>
+            <div class="form-group">
+              <input type="text" id="tacoCat" class="form-control"
+                placeholder="Please enter 2 or more letters that are not a palindrome" />
+            </div>
+            <div class="form-group">
+              <button id="tacoBtn" type="button" class="form-control btn btn-info">Flip your Text</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <hr>
+          <p> <b>Your string reversed: </b><span id="tacoOutput"></span></p>
+          <p> <b>Message:</b> <span id="tacoMsg"></span></p>
+          <hr>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">&copy; jkDev825 2021</span>
+    </div>
+  </footer>
+
+
+  <!-- template logic take from jsloops project   -->
+  <!--  js from site.js connects below at the bottom with script element and document object getelementbyid and function call  -->
+  <!--  after "click"  -->
+  <!--   .must add custom javascript at the bottom of the body and is last following the site.js reference. -->
+  <!--   .the template code below defines what the table data rows will look like and is accessible to the js  -->
+  <!--   .note when creating a new site, to debug, a .vscode folder will be created with a launch.json file  -->
+  <!--   . within the file remove the "file:" line   -->
+  <!--   .add a "url": "http://127.0.0.1:5500/", entry where the ip matches the live server ip in testing -->
+  <!--   .add a "webRoot": "${workspaceFolder}" after without a comman  -->
+  <!--   -->
+  <!--   -->
+  <!--   -->
+
+  <!-- hides from the browser's view and won't render on the page -->
+  <!-- multiple rows below will be shoved above -->
+  <template id="Data-Template">
+    <tr>
+      <td id="col1"></td>
+      <td id="col2"></td>
+      <td id="col3"></td>
+      <td id="col4"></td>
+      <td id="col5"></td>
+      <td id="col6"></td>
+      <td id="col7"></td>
+      <td id="col8"></td>
+      <td id="col9"></td>
+      <td id="col10"></td>
+    </tr>
+  </template>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+
+  <script src="js/site.js"></script>
+
+
+  <!-- Button hook from html into js -->
+  <script>
+    document.getElementById("tacoBtn").addEventListener("click", tc_reverseString);
+  </script>
+
+
+
+</body>
+
+</html>
