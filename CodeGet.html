@@ -93,20 +93,25 @@
     </div>
 
     <div class="container mt-lg-2">
-      <div class="row mt-xl-5">
-        <div class="col-4">
+      <hr>
+      <div class="row mt-xl-5 border border-dark">
+        <div class="col-4 ">
 
         </div>
-        <div class="col-4">
+        <div class="col-4 border border-dark">
 
+          <!-- save working original to figure how how to launch a new window and center the button: can't get any of it to work
+        <button onclick="window.location.href='https://github.com/JKDev825/TacoCat';"  class="btn btn-info ">Jump to GitHub</button>
 
-          <button onclick="window.location.href='https://github.com/JKDev825/TacoCat';" class="btn btn-info">Jump to
-            GitHub</button>
+          <button onclick="window.location.href='https://github.com/JKDev825/TacoCat';" class="btn btn-info">Jump to GitHub</button>
 
-          <!--
-          <button onclick='window.open("https://github.com/JKDev825/TacoCat/");"'>Jump to
+         <button onclick='window.open("https://github.com/JKDev825/TacoCat/","_about","");"' class="btn btn-info">Jump to
             GitHub</button>
           -->
+
+          <!-- 04-14-21 javascript needed (bottom) to use windows.open() to open url in a new tab -->
+          <button onclick="testWindowTab()" class="btn btn-info">Jump to GitHub</button>
+
         </div>
       </div>
     </div>
@@ -116,8 +121,8 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <span class="text-muted">&copy; jkDev825 2021</span>
+    <div class="container ml-1">
+      <span class="text-muted">&copy; Copyright jkDev825 2021</span>
     </div>
   </footer>
 
@@ -133,6 +138,11 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
 
+  <script>
+    function testWindowTab() {
+      window.open("https://github.com/JKDev825/TacoCat/", "_about", "");
+    }
+  </script>
 
 
 </body>
