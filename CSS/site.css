@@ -159,7 +159,7 @@ code {
   .header {
     background-image: url("/img/TacoCat.jpg");
     background-repeat: no-repeat;
-    height: 220px;
+    height: 290px;
     /* jd added */
     background-size: cover;
     background-position: fixed;
