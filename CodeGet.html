@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Coding Challenge Apps</title>
+  <title>Taco Cat</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +19,7 @@
   <!-- Custom CSS jd: added this from getbootstrap nav, view source, find css reference, open, copy paste all into site.css -->
   <link rel="stylesheet" href="/CSS/site.css">
 
-  
+
 </head>
 
 <body id="codeg">
@@ -29,7 +29,7 @@
   <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Challenge Apps</a>
+      <a class="navbar-brand" href="#">Taco Cat</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,22 +37,19 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
 
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-            <a class="nav-link" href="App.html">The App</a>
-          </li>
+          <a class="nav-link" href="index.html">Application</a>
+
           <li class="nav-item">
-            <a class="nav-link" href="CodeView.html">How this Works</a>
+            <a class="nav-link" href="CodeView.html">Code Review</a>
           </li>
+
           <li class="nav-item">
           <li class="nav-item active">
-            <a class="nav-link" href="CodeGet.html">Grab The Code <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="CodeGet.html">Code Grab<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="About.html">About</a>
+            <a class="nav-link" href="index.html">Portfolio</a>
           </li>
-
-
         </ul>
 
         <!-- jd: this is a search form inside the nav bar -->
@@ -66,8 +63,48 @@
     </nav>
   </header>
 
+  <div class="jumbotron jumbotron-fluid header">
+    <div class="container hero">
+      <div>
+        <br>
+        <h1 style="color:white">Taco Cat Palindrome</h1>
+        <!--    <h4 style="color:white">Reverse String Excercise</h4> -->
+      </div>
+    </div>
+  </div>
+
+
+
   <!-- Begin page content -->
-  <main role="main" class="container">
+  <main role="main" class="flex-shrink-0">
+
+    <div class="container mt-lg-2">
+      <div class="row">
+        <!--        <div class="col mt-1 border border-dark rounded shadow-lg"> -->
+        <div class="col mt-1 rounded shadow-lg">
+          <h2 class="text-center">JavaScript Code Grab</h2>
+          <h6> <b>The source code is available for copy if you find any use for it. The link below will take you to my
+              GitHub repository. This is nothing elaborate but perhaps you might find use for the normalizeString() and
+              / or reverseStringCopy() functions as utilities. They have no external dependencies and perhaps useful for
+              porting to different future environments.
+            </b></h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-lg-2">
+      <div class="row mt-xl-5">
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+          <button id="tacoBtn" type="button" class="form-control btn btn-info">Jump to GitHub</button>
+        </div>
+      </div>
+    </div>
+
+
+
   </main>
 
   <footer class="footer">
@@ -87,6 +124,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
+
+
+
 </body>
 
 </html>
