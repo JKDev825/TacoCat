@@ -50,16 +50,16 @@ html {
 */
 
 /*
-** trying to center the button for the code grab page
+** trying to center the button for the code grab page */
 .center {
   margin: 0;
-  position relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-*/
+/**/
 
 body {
 
