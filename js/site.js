@@ -1,45 +1,42 @@
 /*
  ** 04-13-21 jdj: Taco Cat Reverse String Function.
  **              .Need to check and alert the user if this is a palindrome (same value if reversed)
- **              .requirements are to remove all non - alpha characters.see normalizeString()
+ **              .requirements are to remove all non - alpha characters. see normalizeString() below.
+ **              .HTML hook:
+ **              "<script> document.getElementById(" tacoBtn ").addEventListener(" click ", tc_reverseString);" </script>
  **
- **      Logic:        
- **              .make a copy of the passed string.
- **              .normlize the 1st copy witOUT reversing it.
- **              .make a second copy of the passedl; normalize then reverse it: see reverseString()
+ **      Logic: .make a copy of the passed string.
+ **              .normalize the 1st copy witOUT reversing it.
+ **              .make a second copy of the passed string; normalize then reverse it: see reverseString()
  **              .compare the 1st and 2nd string copies.  Set a user message if they're the same.
- **              .use the originally passed string to also reverse it an show the user.
+ **              .use the originally passed string to also reverse it and echo back to the user if successful including non-alpha.
  **
+ **      Note:   .Careful for the differences between use of the document object's .innerText vs .innerHTML.
+ **              .innterHTML was used in some cases to provider return HTML to add element highlighting depending
+ **               on the message.
  */
 function tc_reverseString() {
 
-
     let userWord = document.getElementById("tacoCat").value; // get the user input
     let output = document.getElementById("tacoOutput"); // get output field object once.
-    let outputMsg = document.getElementById("tacoMsg"); // get the message field object once
+    let outputMsg = document.getElementById("tacoMsg"); // get the message field object once 
     let reverseWord = "";
 
     // reinitialize the output fields from any previous displays.
     output.innerText = "";
     outputMsg.innerText = "";
 
-
-
     let copyStr1NormalizedOnly = userWord; // copy the original word as-is
-
-
 
 
     // check something is there and alert them if empty.
     if (copyStr1NormalizedOnly == "") {
-        //        outputMsg.innerText = "Please enter some text.";
         outputMsg.innerHTML = `<span class="text-danger"><b>Please enter some text.</b></span>`;
         return;
     }
 
-    // check something is there and alert them if empty.
+    // validate at least 2 characters were received.
     if (userWord.length < 2) {
-        //        outputMsg.innerText = "Please enter at least 2 characters.";
         outputMsg.innerHTML = `<span class="text-danger"><b>Please enter at least 2 characters.</b></span>`;
         return;
     }
@@ -56,23 +53,17 @@ function tc_reverseString() {
      ** If the text is a palindrome inject html in the return message to highlight the error.
      */
     if (copyStr1NormalizedOnly == copystr2NormalizedReversed) {
-        //   output.innerText = `I'm afraid [${userWord}] is a palindrome when reversed.`;
-
         output.innerHTML = `<span class="bg-danger"><b>I'm afraid [${userWord}] is a palindrome when reversed.</b></span>`;
-        // outputMsg.innerText = `Internally your word is the same forward[${copyStr1NormalizedOnly}] as it is reversed[${copystr2NormalizedReversed}]`;
-        outputMsg.innerHTML = `<span class="text-danger"><b>Internally your word is the same forward[${copyStr1NormalizedOnly}] as it is reversed[${copystr2NormalizedReversed}]</b></span>`;
+        outputMsg.innerText = `Internally your word is the same forward[${copyStr1NormalizedOnly}] as it is reversed[${copystr2NormalizedReversed}]`;
         return;
     }
 
     // reverse the original untouched value as it passed the palindrome test.
     reverseWord = reverseStringCopy(userWord);
     output.innerText = reverseWord;
-    //    outputMsg.innerText = `You're word passed the palindrome review and was reversed.`;
     outputMsg.innerHTML = `<span class="bg-success"><b>You're word passed the palindrome review and was reversed.</b></span>`;
 
-
-    return; // temporary for testing.
-
+    return;
 } // end of reverseString() called from the browser.
 
 // do nothing more than to reverse the passed string.
@@ -110,3 +101,6 @@ function normalizeString(passedString) {
 
     return returnString;
 }
+/*
+**  End of site.js
+*/

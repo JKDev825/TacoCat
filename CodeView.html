@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Coding Challenge Apps</title>
+  <title>Taco Cat</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,10 +16,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+  <link href="css/prismTwilight.css" rel="stylesheet" />
+  <!-- 04-13-21 jdj: from prismjs.com for source code highlighting -->
+
+
   <!-- Custom CSS jd: added this from getbootstrap nav, view source, find css reference, open, copy paste all into site.css -->
   <link rel="stylesheet" href="/CSS/site.css">
 
-  
 </head>
 
 <body id="codev">
@@ -29,7 +32,7 @@
   <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Challenge Apps</a>
+      <a class="navbar-brand" href="#">Taco Cat</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,37 +40,181 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
 
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-            <a class="nav-link" href="App.html">The App</a>
-          </li>
+          <a class="nav-link" href="index.html">Application</a>
+
           <li class="nav-item">
           <li class="nav-item active">
-            <a class="nav-link" href="CodeView.html">How this Works  <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="CodeView.html">Code Review<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="CodeGet.html">Grab The Code</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="About.html">About</a>
+            <a class="nav-link" href="index.html">Portfolio</a> <!-- will return to portfolio when merged -->
           </li>
-
-
         </ul>
-
-        <!-- jd: this is a search form inside the nav bar -->
-        <!-- 04-11-21 jdj: search bar isn't needed 
-        <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      -->
       </div>
     </nav>
   </header>
 
+  <div class="jumbotron jumbotron-fluid header">
+    <div class="container hero">
+      <div>
+        <br>
+        <h1 style="color:white">Taco Cat Palindrome</h1>
+        <!--    <h4 style="color:white">Reverse String Excercise</h4> -->
+      </div>
+    </div>
+  </div>
+
+
   <!-- Begin page content -->
-  <main role="main" class="container">
+  <main role="main" class="flex-shrink-0">
+
+    <div class="container mt-lg-2">
+      <div class="row">
+        <!--        <div class="col mt-1 border border-dark rounded shadow-lg"> -->
+        <div class="col mt-1 rounded shadow-lg">
+          <h2 class="text-center">JavaScript Code Review</h2>
+          <h6> <b>The exercise requires the use of JavaScript to parse the string as an array directly instead of
+              leveraging
+              available methods from other library source code. It was written to illustrate an understanding of simple
+              arrays. The requirements included basic validation of the passed string. Normalize the string by removing
+              non-alphanumeric characters. Reverse a copy of the string and test if the results are the same. Lastly,
+              provide an
+              appropriate update for the user. I welcome any questions you may have regarding the source code below.
+            </b></h6>
+          <h5 class="text-md-center">The full application was written using JavaScript, HTML, CSS, and Bootstrap v4.
+          </h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- This illustrates how to link in primsjs:  This highlights the code copy between <code> tags -->
+    <!-- : see js\prism....js at the bottom -->
+    <!-- : see css\prsmxxx.css in the header above. -->
+    <!-- : This is for the code view on the challenges "see the code" pages.-->
+
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 line-numbers">
+          <pre><code class="language-javascript">/*
+ ** 04-13-21 jdj: Taco Cat Reverse String Function.  File: /js/site.js
+ **              .Need to check and alert the user if this is a palindrome (same value if reversed)
+ **              .requirements are to remove all non - alpha characters. see normalizeString() below.
+ **              .HTML hook:
+ **              "<script> document.getElementById(" tacoBtn ").addEventListener(" click ", tc_reverseString);" </script>
+ **
+ **      Logic: .make a copy of the passed string.
+ **              .normalize the 1st copy witOUT reversing it.
+ **              .make a second copy of the passed string; normalize then reverse it: see reverseString()
+ **              .compare the 1st and 2nd string copies.  Set a user message if they're the same.
+ **              .use the originally passed string to also reverse it and echo back to the user if successful including non-alpha.
+ **
+ **      Note:   .Careful for the differences between use of the document object's .innerText vs .innerHTML.
+ **              .innterHTML was used in some cases to provider return HTML to add element highlighting depending
+ **               on the message.
+ */
+function tc_reverseString() {
+
+    let userWord = document.getElementById("tacoCat").value; // get the user input
+    let output = document.getElementById("tacoOutput"); // get output field object once.
+    let outputMsg = document.getElementById("tacoMsg"); // get the message field object once 
+    let reverseWord = "";
+
+    // reinitialize the output fields from any previous displays.
+    output.innerText = "";
+    outputMsg.innerText = "";
+
+    let copyStr1NormalizedOnly = userWord; // copy the original word as-is
+
+
+    // check something is there and alert them if empty.
+    if (copyStr1NormalizedOnly == "") {
+        outputMsg.innerHTML = `<span class="text-danger"><b>Please enter some text.</b></span>`;
+        return;
+    }
+
+    // validate at least 2 characters were received.
+    if (userWord.length < 2) {
+        outputMsg.innerHTML = `<span class="text-danger"><b>Please enter at least 2 characters.</b></span>`;
+        return;
+    }
+
+    let copystr2NormalizedReversed = userWord;
+
+    copyStr1NormalizedOnly = normalizeString(userWord);
+
+    copystr2NormalizedReversed = normalizeString(userWord);
+    copystr2NormalizedReversed = reverseStringCopy(copystr2NormalizedReversed);
+
+
+    /*
+     ** If the text is a palindrome inject html in the return message to highlight the error.
+     */
+    if (copyStr1NormalizedOnly == copystr2NormalizedReversed) {
+        output.innerHTML = `<span class="bg-danger"><b>I'm afraid [${userWord}] is a palindrome when reversed.</b></span>`;
+        outputMsg.innerText = `Internally your word is the same forward[${copyStr1NormalizedOnly}] as it is reversed[${copystr2NormalizedReversed}]`;
+        return;
+    }
+
+    // reverse the original untouched value as it passed the palindrome test.
+    reverseWord = reverseStringCopy(userWord);
+    output.innerText = reverseWord;
+    outputMsg.innerHTML = `<span class="bg-success"><b>You're word passed the palindrome review and was reversed.</b></span>`;
+
+    return;
+} // end of reverseString() called from the browser.
+
+// do nothing more than to reverse the passed string.
+function reverseStringCopy(passedString) {
+    let returnString = "";
+
+    for (x = passedString.length - 1; x >= 0; x--) {
+        returnString = returnString + passedString[x];
+    }
+    return returnString;
+}
+
+// remove all non alpha characters from the string and only leave 'A-Z' and '0-9'.  return string will be all CAPS !!!
+// white space and punctuation will be removed.
+function normalizeString(passedString) {
+    let tmpWorkString = "";
+    let returnString = "";
+    let lenStr = 0;
+
+    tmpWorkString = passedString;
+    tmpWorkString = tmpWorkString.toUpperCase();
+    lenStr = tmpWorkString.length;
+
+    for (let x = 0; x < lenStr; x++) {
+        if (tmpWorkString[x] >= 'A' && tmpWorkString[x] <= 'Z') {
+            returnString = returnString + tmpWorkString[x];
+            continue;
+        }
+        if (tmpWorkString[x] >= '0' && tmpWorkString[x] <= '9') {
+            returnString = returnString + tmpWorkString[x];
+            continue;
+        }
+        continue; // here for clarity; skip the character
+    }
+
+    return returnString;
+}
+/*
+**  End of site.js
+*/
+</code></pre>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
   </main>
 
   <footer class="footer">
@@ -87,6 +234,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
+
+  <script src="js/prismTwilight.js"></script> <!-- 04-13-21 jdj: from prismjs.com to highlight displayed source code -->
+
 </body>
 
 </html>
