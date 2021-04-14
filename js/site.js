@@ -12,7 +12,7 @@
  **              .use the originally passed string to also reverse it and echo back to the user if successful including non-alpha.
  **
  **      Note:   .Careful for the differences between use of the document object's .innerText vs .innerHTML.
- **              .innterHTML was used in some cases to provider return HTML to add element highlighting depending
+ **              .innterHTML was used in some cases to provide return HTML to add element highlighting depending
  **               on the message.
  */
 function tc_reverseString() {
@@ -102,5 +102,5 @@ function normalizeString(passedString) {
     return returnString;
 }
 /*
-**  End of site.js
-*/
+ **  End of site.js
+ */
