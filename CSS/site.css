@@ -175,3 +175,8 @@ code {
     display: flex;
   }
 }
+
+hr {
+  border: 2px solid #014474;
+  border-radius: 2px;
+}
