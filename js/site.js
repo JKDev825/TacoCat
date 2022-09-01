@@ -61,7 +61,8 @@ function tc_reverseString() {
     // reverse the original untouched value as it passed the palindrome test.
     reverseWord = reverseStringCopy(userWord);
     output.innerText = reverseWord;
-    outputMsg.innerHTML = `<span class="bg-success"><b>You're word passed the palindrome review and was reversed.</b></span>`;
+    //  outputMsg.innerHTML = `<span class="bg-success"><b>You're word passed the palindrome review and was reversed.</b></span>`;
+    outputMsg.innerHTML = `<span class="bg-info"><b>You're word passed the palindrome review and was reversed.</b></span>`;
 
     return;
 } // end of reverseString() called from the browser.
