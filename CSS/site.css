@@ -181,3 +181,10 @@ hr {
   border: 1px solid #014474;
   border-radius: 2px;
 }
+
+
+/* 09-01-22 Palindrome msg background and text colors */
+.palin_found_msg {
+  background-color: black;
+  color: white;
+}

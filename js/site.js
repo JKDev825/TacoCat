@@ -53,7 +53,9 @@ function tc_reverseString() {
      ** If the text is a palindrome inject html in the return message to highlight the error.
      */
     if (copyStr1NormalizedOnly == copystr2NormalizedReversed) {
-        output.innerHTML = `<span class="bg-danger"><b>I'm afraid [${userWord}] is a palindrome when reversed.</b></span>`;
+        //    output.innerHTML = `<span class="bg-danger"><b>I'm afraid [${userWord}] is a palindrome when reversed.</b></span>`;
+        //        output.innerHTML = `<span class="bg-dark"><b>I'm afraid [${userWord}] is a palindrome when reversed.</b></span>`;
+        output.innerHTML = `<span class="palin_found_msg"><b>I'm afraid [${userWord}] is a palindrome when reversed.</b></span>`;
         outputMsg.innerText = `Internally your word is the same forward[${copyStr1NormalizedOnly}] as it is reversed[${copystr2NormalizedReversed}]`;
         return;
     }
@@ -61,10 +63,22 @@ function tc_reverseString() {
     // reverse the original untouched value as it passed the palindrome test.
     reverseWord = reverseStringCopy(userWord);
     output.innerText = reverseWord;
-    //  outputMsg.innerHTML = `<span class="bg-success"><b>You're word passed the palindrome review and was reversed.</b></span>`;
-    // outputMsg.innerHTML = `<span class="bg-info"><b>You're word passed the palindrome review and was reversed.</b></span>`;
-    outputMsg.innerHTML = `<span class="bg-info"><b>You're word passed the palindrome review and was reversed.</b></span>`;
-    Play(); // 09-01-22 add call to show confetti on success
+    outputMsg.innerHTML = `<span class="bg-success"><b>You're word passed the palindrome review and was reversed.</b></span>`;
+
+    /*
+     ** 09-01-22 Add confetti effect for non-palindrome text
+     **          .see https://github.com/catdad/canvas-confetti repo
+     **           for documentation on this cdn
+     */
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: {
+            y: 0.6
+        }
+    });
+
+
     return;
 } // end of reverseString() called from the browser.
 

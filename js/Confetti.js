@@ -128,9 +128,11 @@ function setup() {
         ease: Linear.easeNone
     });
 
+    /* 09-01-22 testing 
     document.querySelector('body').onclick = function () {
         play();
     };
+    */
 
     play();
 }
