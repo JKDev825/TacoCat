@@ -64,7 +64,7 @@ function tc_reverseString() {
     //  outputMsg.innerHTML = `<span class="bg-success"><b>You're word passed the palindrome review and was reversed.</b></span>`;
     // outputMsg.innerHTML = `<span class="bg-info"><b>You're word passed the palindrome review and was reversed.</b></span>`;
     outputMsg.innerHTML = `<span class="bg-info"><b>You're word passed the palindrome review and was reversed.</b></span>`;
-
+    Play(); // 09-01-22 add call to show confetti on success
     return;
 } // end of reverseString() called from the browser.
 
