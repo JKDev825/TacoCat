@@ -182,6 +182,15 @@
   <!-- Button hook from html into js -->
   <script>
     document.getElementById("tacoBtn").addEventListener("click", tc_reverseString);
+
+    // 09-26-22 jdj: add logic for enter key as if button clicked.
+    var input = document.getElementById("tacoCat");
+    input.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("tacoBtn").click();
+      }
+    });
   </script>
 
 
